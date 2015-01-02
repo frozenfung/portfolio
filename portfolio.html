@@ -11,11 +11,24 @@
   <!--[if gt IE 8]><!-->
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
   <!--<![endif]-->
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
   <style>
+    html, button, input, select, textarea,
+    .pure-g [class *= "pure-u"]{
+      font-family: 'Inconsolata', sans-serif;
+    }
+
     body{
       background-color: #111;
       
     }
+
+    a {
+      text-decoration: none;
+      color: #333;
+    }
+
     .wrapper{
       margin: auto;
       margin-top: 1%;
@@ -26,7 +39,10 @@
       background-color: #333;
       height: 200px;
       position: relative;
-      box-shadow: 0px 1px 5px #111;  
+      -webkit-box-shadow: 0px 1px 5px #111;
+         -moz-box-shadow: 0px 1px 5px #111;  
+           -o-box-shadow: 0px 1px 5px #111;  
+              box-shadow: 0px 1px 5px #111;    
     }
 
     .index::after{
@@ -44,12 +60,12 @@
       width: 80%;
       color: #ddd;
       margin: auto; 
-      padding: 2%;
+      padding: 1%;
       font-size: 2em;
     }
 
     .index>div:first-child{
-      padding-top: 8%;
+      padding-top: 6%;
     }
 
     .index>div:last-child{
@@ -59,12 +75,46 @@
 
     .myself{
       background-color: #090;
-      height: 400px;
+      height: 500px;
     }
 
     .profile{
+      color: #333;
       background-color: #fff;
-      height: 600px;
+      height: 700px;
+      padding: 2% 0;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+           -o-box-sizing: border-box;
+              box-sizing: border-box;
+    }
+
+    .profile>div{
+      width: 80%;
+      margin-bottom: 3%;
+      position: relative;
+    }
+
+    .profile>div>div:first-child{
+      font-family: 'Changa One', cursive;
+      font-size: 7em;
+      color: rgba(207, 207, 207, .6);
+      position: absolute;
+      top: 0%;
+      left: 10%;
+    }
+
+    .profile>div>p{
+      font-size: 1.5em;
+      position: relative;
+      padding: 10% 0 0 15%;
+      z-index: 5;
+    }
+
+    .profile>div>p>a{
+      font-size: 1.5em;
+      font-size: 3vw;
+      color: #666;
     }
 
     .break{
@@ -95,13 +145,29 @@
           Hello,<br>
           I am Fung :)
         </div>
-        <div>This is a portfolio to introduce myself</div>
+        <div>Marry Christmas & Happy New Year</div>
       </div>
       <div class='myself'>
         <img class='pure-img' src='img/christmas.png'>
       </div>
     </div>
     <div class='profile pure-u-1 pure-u-lg-2-3'>
+      <div class='pure-u-1'>
+        <div>ABOUT</div>
+        <p>Welcome! I am glad we meet here by fate. My name is chun-fung Lee, and my friends always call me fung. Studied Economic. Graduated from National ChengChi University after 2013/6. Now I am a junior full-end developer with one year experience.</p>
+      </div>    
+      <div class='pure-u-1'>
+        <div>SKILL</div>
+        <p>
+          html, css<br>
+          javascript, jquery<br>
+          ruby on rails<br>
+          UI/UX design<br>
+          <br>
+          <br>
+          <a href='javascript:;'>SEE PROJECTS I HAVE DONE</a>
+        </p>     
+      </div>
     </div>
     <div class='break pure-u-1'></div>
     <div class='project pure-u-1 pure-u-lg-1-2'></div>
