@@ -13,6 +13,7 @@
   <!--<![endif]-->
   <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <style>
     html, button, input, select, textarea,
     .pure-g [class *= "pure-u"]{
@@ -29,16 +30,26 @@
       color: #333;
     }
 
+    .arrow {
+      padding-left: 10px;
+    }
+
     .wrapper{
       margin: auto;
       margin-top: 1%;
       margin-bottom: 1%;
       width: 98%;
     }
+
     .index{
       background-color: #333;
-      height: 200px;
+      height: auto;
+      padding: 10%;
       position: relative;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+           -o-box-sizing: border-box;
+              box-sizing: border-box;
       -webkit-box-shadow: 0px 1px 5px #111;
          -moz-box-shadow: 0px 1px 5px #111;  
            -o-box-shadow: 0px 1px 5px #111;  
@@ -52,29 +63,23 @@
       position: absolute;
       top: 100%;
       left: 10%;
-      border: 25px solid #333;
+      border: 30px solid #333;
       border-color: #333 transparent transparent transparent;
     }
 
     .index>div{
       width: 80%;
-      color: #ddd;
+      color: HSL(90, 70%, 50%);
       margin: auto; 
       padding: 1%;
       font-size: 2em;
     }
 
-    .index>div:first-child{
-      padding-top: 6%;
-    }
-
     .index>div:last-child{
-      color: #bbb;
-      font-size: 1em;
+      font-size: 1.2em;
     }
 
     .myself{
-      background-color: #090;
       height: 500px;
       overflow: hidden;
     }
@@ -82,8 +87,9 @@
     .profile{
       color: #333;
       background-color: #fff;
-      height: 700px;
+      height: auto;
       padding: 2% 0;
+      padding-top: 5%;
       -webkit-box-sizing: border-box;
          -moz-box-sizing: border-box;
            -o-box-sizing: border-box;
@@ -96,45 +102,124 @@
 
     .profile>div{
       width: 80%;
-      margin-bottom: 3%;
+      margin: auto;
       position: relative;
     }
 
     .profile>div>div:first-child{
       font-family: 'Changa One', cursive;
       font-size: 5em;
-      /*color: rgba(207, 207, 207, .6);*/
-      background: -webkit-linear-gradient(
-        rgba(175, 175, 175, .8),
-        rgba(207, 207, 207, .8),
-        rgba(223, 223, 223, .8), 
-        rgba(255, 255, 255, 1)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: absolute;
-      top: 0%;
-      left: 10%;
+      color: HSL(0, 0%, 80%);
     }
 
     .profile>div>p{
-      font-size: 1.5em;
+      font-size: 1.4em;
       position: relative;
-      padding: 10% 0 0 15%;
+      padding-bottom: 5%;
       z-index: 5;
+      margin: 0;
     }
 
     .profile>div>p>a{
-      font-size: 4vw;
+      font-size: 1.2em;
       color: #666;
     }
 
+    .quote{
+      height: auto;
+      padding: 5%;
+      color: HSL(90, 70%, 50%);
+      font-size: 1.5em;
+    }
+
+    .quote>div{
+      width: 85%;
+      margin: auto;
+    }
+
+    .quote>div>div:first-child{
+      font-style: italic;
+    }
+
+    .quote>div>div:last-child{
+      text-align: right;
+    }
+
+    .project{
+      color: #333;
+      background-color: #fff;
+      height: auto;
+      padding: 2% 0;
+      padding-top: 5%;
+      position: relative;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+           -o-box-sizing: border-box;
+              box-sizing: border-box;
+      -webkit-box-shadow: 0px 0px 8px #111 inset;
+         -moz-box-shadow: 0px 0px 8px #111 inset;
+           -o-box-shadow: 0px 0px 8px #111 inset;
+              box-shadow: 0px 0px 8px #111 inset;
+    }
+
+    .project>div:first-child{
+      font-family: 'Changa One', cursive;
+      font-size: 5em;
+      color: HSL(0, 0%, 80%);
+      width: 80%;
+      margin: auto;
+    }
+
+    .project>ul{
+      width: 80%;
+      margin: auto;
+      padding: 0;
+    }
+
+    .project>ul>li{
+      display: inline-block;
+      margin-bottom: 5%;
+      font-size: 1.3em;
+      position: relative;
+      width: 100%;
+      z-index: 5;
+    }
+
+    .project>ul>li>a:hover>div:first-child>div:first-child{
+      color: HSL(90, 70%, 50%);
+    }
+
+    .project .title>div{
+      font-size: 1.3em;
+    }
+
+    .project .title>div:first-child{
+      float: left;
+    }
+
+    .project .title>div:last-child{
+      float: right;
+    }
+
+    .project p{
+      clear: both;
+      margin-top: 10px;
+    }
+
+    .story{
+      background-color: #666;
+      height: 500px;
+    }
+
     .contact{
-      padding: 2%;
+      height:auto;
+      padding: 5%;
+      background-color: #222;
+      position: relative;
     }
 
     .contact>ul{
-      width:90%;
+      width: 90%;
       margin: auto;
       text-align: center;
       padding: 0;
@@ -144,7 +229,7 @@
       display: inline-block;
       width: 60px;
       height: 60px;
-      margin-left: 1%;    
+      margin-left: 2%;    
     }
 
     .contact>ul>li>a{
@@ -169,80 +254,6 @@
       background: url('img/icons.png') 60px 0;
     }
 
-    .project{
-      color: #333;
-      background-color: #fff;
-      height: 700px;
-      padding: 2% 0;
-      position: relative;
-      -webkit-box-sizing: border-box;
-         -moz-box-sizing: border-box;
-           -o-box-sizing: border-box;
-              box-sizing: border-box;
-      -webkit-box-shadow: 0px 0px 8px #111 inset;
-         -moz-box-shadow: 0px 0px 8px #111 inset;
-           -o-box-shadow: 0px 0px 8px #111 inset;
-              box-shadow: 0px 0px 8px #111 inset;
-    }
-
-    .project>div:first-child{
-      font-family: 'Changa One', cursive;
-      font-size: 5em;
-      /*color: rgba(207, 207, 207, .6);*/
-      background: -webkit-linear-gradient(
-        rgba(175, 175, 175, .8),
-        rgba(207, 207, 207, .8),
-        rgba(223, 223, 223, .8), 
-        rgba(255, 255, 255, 1)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      position: absolute;
-      top: 5%;
-      left: 10%;
-    }
-
-    .project>ul{
-      width: 75%;
-      margin: auto;
-      margin-top: 15%;
-      padding: 0;
-    }
-
-    .project>ul>li{
-      display: inline-block;
-      margin-bottom: 10%;
-      font-size: 1.3em;
-      position: relative;
-      width: 100%;
-      z-index: 5;
-    }
-
-    .project .title>div{
-      font-size: 1.3em;
-    }
-
-    .project .title>div:first-child{
-      float: left;
-    }
-
-    .project .title>div:last-child{
-      float: right;
-    }
-
-    .project p{
-      clear: both;
-      margin-top: 10%;
-    }
-
-    .story{
-      background-color: #666;
-      height: 300px;
-    }
-    .hobby{
-      background-color: #aaa;
-      height: 300px;
-    }
   </style>
 </head>
 <body>
@@ -253,68 +264,116 @@
           Hello,<br>
           I am Fung :)
         </div>
-        <div>Marry Christmas & Happy New Year</div>
+        <div>Email : frozenfung@gmail.com</div>
       </div>
       <div class='myself'>
         <img class='pure-img' src='img/christmas.png'>
       </div>
     </div>
     <div class='profile pure-u-1 pure-u-lg-2-3'>
-      <div class='pure-u-1'>
+      <div>
         <div>ABOUT</div>
-        <p>Welcome! My name is chun-fung Lee, and my friends always call me fung. Studied economic in National ChengChi University and graduated in 2013/6. Now I am a junior full-end developer with 1 year experience.</p>
+        <p>Welcome! My name is chun-fung Lee, and my friends always call me fung. Studied economic in National ChengChi University and graduated in June 2013. Now I am a junior full-end developer with 1 year experience. Loving TRAVEL, TABLETENNIS, LATTE. On the left hand, you can see I got three fancy chocolate from a exchange gift party in Christmas 2014 with my tabletennis partners.</p>
       </div>    
-      <div class='pure-u-1'>
+      <div>
         <div>SKILL</div>
         <p>
           html, css<br>
           javascript, jquery<br>
+          RWD design<br>
           ruby on rails<br>
           UI/UX design<br>
           <br>
-          <br>
-          <a href='javascript:;'>MY PROJECTS -></a>
+          <a href='.project'>TAKE A LOOK ON MY PROJECTS</a>
         </p>     
       </div>
     </div>
-    <div class='contact pure-u-1'>
-      <ul>
-        <li class='gplus'><a href="https://plus.google.com/u/0/116206053686702681232/posts/p/pub"></a></li>
-        <li class='fb'><a href="https://www.facebook.com/profile.php?id=100000112760324&fref=ufi"></a></li>
-        <li class='linkedin'><a href="https://www.linkedin.com/in/frozenfung"></a></li>
-        <li class='github'><a href="https://github.com/frozenfung"></a></li>
-      </ul>    
+    <div class='quote pure-u-1'>
+      <div>
+        <div>There are only two kind of people in the world. HAPPY PIG and UNHAPPY HUMAN BEING.</div>
+        <div>- John Stuart Mill</div>
+      </div>
     </div>
     <div class='project pure-u-1 pure-u-lg-1-2'>
       <div>PROJECT</div>
       <ul>
         <li>
-          <div class='title'>
-            <div><a href='http://beta.foodudes.co'>foodudes</a></div>
-            <div>2014/11 - now</div>
-          </div>
-          <p>It's a platform for awesome restaurant recommendation. Only your trusted friend can get involved in.</p>
+          <a href='http://beta.foodudes.co'>
+            <div class='title'>
+              <div>foodudes</div>
+              <div>2014/11 - now</div>
+            </div>
+            <p>It's a platform for awesome restaurant recommendation. Only your trusted friend can get involved in.</p>
+          </a>
         </li>
         <li>
-          <div class='title'>
-            <div><a href='http://frozenfung.com/wdyw/model/home.php'>What do you want</a></div>
-            <div>2013/8-2013/10</div>
-          </div>
-          <p>Trying to build a new type of blog - record with images.</p>
+          <a href='http://frozenfung.com/wdyw/model/home.php'>
+            <div class='title'>
+              <div>What do you want</div>
+              <div>2014/8-2014/10</div>
+            </div>
+            <p>Trying to build a new type of blog - record with images.</p>
+          </a>
         </li>
         <li>
-          <div class='title'>
-            <div><a href='http://frozenfung.com/QandQ/index.php/QandQ'>Q&Q</a></div>
-            <div>2013/4-2013/5</div>
-          </div>
-          <p>A services help students to get there master degree. Paper consulting, data analyzing, data process.</p>
+          <a href='http://frozenfung.com/QandQ/index.php/QandQ'>
+            <div class='title'>
+              <div>Q&Q</div>
+              <div>2013/4-2013/5</div>
+            </div>
+            <p>A services help students to get there master degree. Paper consulting, data analyzing, data process.</p>
+          </a>
         </li>
       </ul>
     </div>
     <div class='pure-u-1 pure-u-lg-1-2'>
       <div class='story'></div>
-      <div class='hobby'></div>
+      <div class='contact'>
+        <ul>
+          <li class='gplus'><a href="https://plus.google.com/u/0/116206053686702681232/posts/p/pub"></a></li>
+          <li class='fb'><a href="https://www.facebook.com/profile.php?id=100000112760324&fref=ufi"></a></li>
+          <li class='linkedin'><a href="https://www.linkedin.com/in/frozenfung"></a></li>
+          <li class='github'><a href="https://github.com/frozenfung"></a></li>
+        </ul>    
+      </div>
     </div>
   </div>
+  <script>
+  var arrow = '>';
+  var arrow_body = '-';
+  var length = 4;
+  var arrow_set;  
+  var arrow_animation = function(){
+    $('.arrow').text(arrow_body + arrow);
+    arrow_body += '-'
+    if(arrow_body.length > length){
+      arrow_body = '-';
+    }
+  };
+
+  var show_arrow = function(){
+    $(this).append('<span class="arrow"></span>');
+    arrow_animation();
+    arrow_set = setInterval(arrow_animation, 200);
+  }
+
+  var hide_arrow = function(){
+    $('.arrow').remove();
+    clearInterval(arrow_set);
+    arrow_body = '-';
+  }
+
+  $(function(){
+    $('.profile>div>p>a').hover(show_arrow, hide_arrow);
+    $('.profile>div>p>a').click(function(){
+      var anchor = $(this);
+      $('html, body').stop().animate({
+        scrollTop: $(anchor.attr('href')).offset().top
+      }, 800);
+      event.preventDefault();
+    });
+    $('.project>ul>li>a p').hover(show_arrow, hide_arrow);
+  });
+  </script>
 </body>
 </html>
